@@ -1,0 +1,26 @@
+classDiagram
+    direction LR
+    Engine o-- PreProcessorInterface: call
+    Engine o-- ProcessorInterface: call
+    Engine o-- PostProcessorInterface: call
+
+    class Engine {
+        + execute(Document $document): array
+    }
+
+    class PreProcessorInterface {
+        + execute(Document $document): void
+        + order(): int
+    }
+
+    class ProcessorInterface {
+        + execute(Document $document): array
+        + score(Document $document): int
+    }
+
+    class PostProcessorInterface {
+        + execute(array $lines): array
+        + order(): int
+    }
+
+
