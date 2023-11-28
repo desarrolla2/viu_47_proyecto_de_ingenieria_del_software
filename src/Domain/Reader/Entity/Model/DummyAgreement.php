@@ -2,7 +2,7 @@
 
 namespace Domain\Reader\Entity\Model;
 
-interface ModelInterface
+class DummyAgreement implements AgreementInterface
 {
 
 }
