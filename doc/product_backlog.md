@@ -30,8 +30,8 @@
 ### references
 
 * [milestone](https://github.com/desarrolla2/viu_47_proyecto_de_ingenieria_del_software/milestone/2)
-* [demo](https://youtu.be/BBw-5vUW-qg)
-* [retrospectiva](https://youtu.be/147mgtOAKNk)
+* demo: [video](https://youtu.be/BBw-5vUW-qg), [notas](sprint_1/demo.md)
+* retrospectiva: [video](https://youtu.be/147mgtOAKNk), [notas](sprint_1/retrospective.md)
 
 ## Sprint #2
 
@@ -39,14 +39,17 @@
 
 ### Issues
 
-| code | description                                                  |                                                                                             |
-|------|--------------------------------------------------------------|---------------------------------------------------------------------------------------------|
-| 008  | Implementación de un proceso automático de verificación.     |                                                                                             |
-| 009  | Implementación de un procesador de texto basado en pdf2text. |                                                                                             |
+| code | description                                                                                |                                                                                              |
+|------|--------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------|
+| 005  | Diseño e implementación del sistema basado en contenedores.                                | [issue](https://github.com/desarrolla2/viu_47_proyecto_de_ingenieria_del_software/issues/5)  |
+| 009  | Implementación de un procesador de texto basado en pdf2text.                               | [issue](https://github.com/desarrolla2/viu_47_proyecto_de_ingenieria_del_software/issues/9)  |
+| 011  | Investigación sobre el estado del arte de las herramientas de lectura automática de texto. | [issue](https://github.com/desarrolla2/viu_47_proyecto_de_ingenieria_del_software/issues/11) |
+| 016  | Integración continua con github actions.                                                   | [issue](https://github.com/desarrolla2/viu_47_proyecto_de_ingenieria_del_software/issues/16) |
 
 ### References
 
 * [milestone](https://github.com/desarrolla2/viu_47_proyecto_de_ingenieria_del_software/milestone/3)
+* plan: [video](https://youtu.be/lnvkIOcW5Pc), [notas](sprint_2/plan.md)
 
 ## Sprint #3
 
@@ -82,9 +85,10 @@
 
 ### Issues
 
-| code | description                                      |                                                                                             |
-|------|--------------------------------------------------|---------------------------------------------------------------------------------------------|
-| 015  | Desarrollo de una interfaz de línea de comandos. |                                                                                             |
+| code | description                                              |                                                                                             |
+|------|----------------------------------------------------------|---------------------------------------------------------------------------------------------|
+| 008  | Implementación de un proceso automático de verificación. |                                                                                             |
+| 015  | Desarrollo de una interfaz de línea de comandos.         |                                                                                             |
 
 ### References
 
