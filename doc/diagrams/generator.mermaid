@@ -14,12 +14,12 @@ classDiagram
     }
 
     class ProcessorInterface {
-        + execute(Document $document): array
+        + execute(Document $document): Text
         + score(Document $document): int
     }
 
     class PostProcessorInterface {
-        + execute(array $lines): array
+        + execute(Text $text): Text
         + order(): int
     }
 

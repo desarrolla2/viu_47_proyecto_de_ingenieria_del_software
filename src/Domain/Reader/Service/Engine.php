@@ -3,6 +3,7 @@
 namespace Domain\Reader\Service;
 
 use Domain\Reader\Entity\Document;
+use Domain\Reader\Entity\Model\ModelInterface;
 
 readonly class Engine
 {
@@ -10,12 +11,12 @@ readonly class Engine
     {
     }
 
-    public function execute(Document $document): array
+    public function execute(Document $document): ModelInterface
     {
         return $this->executeProcessor($document);
     }
 
-    private function executeProcessor(Document $document): array
+    private function executeProcessor(Document $document): ModelInterface
     {
         $processor = $this->getProcessor($document);
 
