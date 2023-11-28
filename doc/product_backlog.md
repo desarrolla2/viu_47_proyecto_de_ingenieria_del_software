@@ -4,18 +4,22 @@
 
 *Inicio 26/10/23, Final 09/11/2023*
 
-[milestone](https://github.com/desarrolla2/viu_47_proyecto_de_ingenieria_del_software/milestone/1)
+### Issues
 
 | code | description                                                   |                                                                                             |
 |------|---------------------------------------------------------------|---------------------------------------------------------------------------------------------|
 | 001  | Análisis y definición inicial de requisitos.                  | [issue](https://github.com/desarrolla2/viu_47_proyecto_de_ingenieria_del_software/issues/1) |
 | 002  | Diseño de la arquitectura del sistema de generación de texto. | [issue](https://github.com/desarrolla2/viu_47_proyecto_de_ingenieria_del_software/issues/2) |
 
+### References
+
+* [milestone](https://github.com/desarrolla2/viu_47_proyecto_de_ingenieria_del_software/milestone/1)
+
 ## Sprint #1
 
 *Inicio 10/11/23, Final 23/11/2023*
 
-[milestone](https://github.com/desarrolla2/viu_47_proyecto_de_ingenieria_del_software/milestone/2)
+### issues
 
 | code | description                                                 |                                                                                             |
 |------|-------------------------------------------------------------|---------------------------------------------------------------------------------------------|
@@ -23,54 +27,80 @@
 | 004  | Diseño e implementación del sistema de pruebas automáticas. | [issue](https://github.com/desarrolla2/viu_47_proyecto_de_ingenieria_del_software/issues/4) |
 | 007  | Definición de un conjunto de datos de prueba.               | [issue](https://github.com/desarrolla2/viu_47_proyecto_de_ingenieria_del_software/issues/7) |
 
+### references
+
+* [milestone](https://github.com/desarrolla2/viu_47_proyecto_de_ingenieria_del_software/milestone/2)
+* [demo](https://youtu.be/BBw-5vUW-qg)
+* [retrospectiva](https://youtu.be/147mgtOAKNk)
+
 ## Sprint #2
 
 *Inicio 24/11/23, Final 07/12/2023*
 
-[milestone](https://github.com/desarrolla2/viu_47_proyecto_de_ingenieria_del_software/milestone/3)
+### Issues
 
 | code | description                                                  |                                                                                             |
 |------|--------------------------------------------------------------|---------------------------------------------------------------------------------------------|
 | 008  | Implementación de un proceso automático de verificación.     |                                                                                             |
 | 009  | Implementación de un procesador de texto basado en pdf2text. |                                                                                             |
 
+### References
+
+* [milestone](https://github.com/desarrolla2/viu_47_proyecto_de_ingenieria_del_software/milestone/3)
+
 ## Sprint #3
 
 *Inicio 08/12/23, Final 22/12/2023*
 
-[milestone](https://github.com/desarrolla2/viu_47_proyecto_de_ingenieria_del_software/milestone/4)
+### Issues
 
 | code | description                                                                                |                                                                                             |
 |------|--------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------|
 | 011  | Investigación sobre el estado del arte de las herramientas de lectura automática de texto. |                                                                                             |
 
+### References
+
+* [milestone](https://github.com/desarrolla2/viu_47_proyecto_de_ingenieria_del_software/milestone/4)
+
 ## Sprint #4
 
 *Inicio 23/12/23, Final 11/01/2024*
 
-[milestone](https://github.com/desarrolla2/viu_47_proyecto_de_ingenieria_del_software/milestone/5)
+### Issues
 
 | code | description                                                 |                                                                                             |
 |------|-------------------------------------------------------------|---------------------------------------------------------------------------------------------|
 | 012  | Implementación de un módulo de lectura automática de texto. |                                                                                             |
 
+### References
+
+* [milestone](https://github.com/desarrolla2/viu_47_proyecto_de_ingenieria_del_software/milestone/5)
+
 ## Sprint #5
 
 *Inicio 12/01/24, Final 11/01/2024*
 
-[milestone](https://github.com/desarrolla2/viu_47_proyecto_de_ingenieria_del_software/milestone/6)
+### Issues
 
 | code | description                                      |                                                                                             |
 |------|--------------------------------------------------|---------------------------------------------------------------------------------------------|
 | 015  | Desarrollo de una interfaz de línea de comandos. |                                                                                             |
 
+### References
+
+* [milestone](https://github.com/desarrolla2/viu_47_proyecto_de_ingenieria_del_software/milestone/6)
+
 ## Sprint #6
 
 *Inicio 26/01/24, Final 06/02/2024*
 
-[milestone](https://github.com/desarrolla2/viu_47_proyecto_de_ingenieria_del_software/milestone/7)
+### Issues
 
 | code | description                                                   |                                                                                             |
 |------|---------------------------------------------------------------|---------------------------------------------------------------------------------------------|
 | 013  | Elaboración de la documentación requerida para la asignatura. |                                                                                             |
 | 016  | Desarrollo de una interfaz web sencilla.                      |                                                                                             |
+
+### References
+
+* [milestone](https://github.com/desarrolla2/viu_47_proyecto_de_ingenieria_del_software/milestone/7)
