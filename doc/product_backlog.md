@@ -21,7 +21,7 @@
 |------|-------------------------------------------------------------|---------------------------------------------------------------------------------------------|
 | 003  | Diseño de la arquitectura del sistema de lectura de texto.  | [issue](https://github.com/desarrolla2/viu_47_proyecto_de_ingenieria_del_software/issues/1) |
 | 004  | Diseño e implementación del sistema de pruebas automáticas. | [issue](https://github.com/desarrolla2/viu_47_proyecto_de_ingenieria_del_software/issues/2) |
-| 007  | Definición de un conjunto de datos de prueba.               | [issue](https://github.com/desarrolla2/viu_47_proyecto_de_ingenieria_del_software/issues/2) |
+| 007  | Definición de un conjunto de datos de prueba.               | [issue](https://github.com/desarrolla2/viu_47_proyecto_de_ingenieria_del_software/issues/7) |
 
 ## Sprint #2
 

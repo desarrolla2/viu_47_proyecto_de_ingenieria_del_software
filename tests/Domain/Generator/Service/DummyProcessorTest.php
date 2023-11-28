@@ -9,7 +9,7 @@ use Domain\Generator\Service\Dummy\DummyProcessor;
 use Domain\Generator\ValueObject\Text;
 use PHPUnit\Framework\TestCase;
 
-class EngineTest extends TestCase
+class DummyProcessorTest extends TestCase
 {
     public function testDummyProcessor()
     {
@@ -18,6 +18,6 @@ class EngineTest extends TestCase
         $document = new Document();
         $text = $engine->execute($document);
 
-        $this->assetInstanceOf(Text::class, $text);
+        $this->assertInstanceOf(Text::class, $text);
     }
 }
