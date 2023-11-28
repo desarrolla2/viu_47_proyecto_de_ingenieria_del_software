@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Domain\Generator\Entity;
+namespace Domain\Generator\Entity;
 
 class Document
 {

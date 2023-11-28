@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Domain\Generator\Service;
+namespace Domain\Generator\Service;
 
 interface PostProcessorInterface
 {

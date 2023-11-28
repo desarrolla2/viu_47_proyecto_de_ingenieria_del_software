@@ -1,8 +1,8 @@
 <?php
 
-namespace Domain\Generator\Service;
+namespace Domain\Reader\Service;
 
-use Domain\Generator\Entity\Document;
+use Domain\Reader\Entity\Document;
 
 interface ProcessorInterface
 {
