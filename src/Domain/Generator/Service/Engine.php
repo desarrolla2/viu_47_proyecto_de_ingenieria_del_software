@@ -5,10 +5,25 @@ namespace App\Domain\Generator\Service;
 use App\Domain\Generator\Entity\Document;
 use App\Domain\Generator\ValueObject\Text;
 
-readonly class Engine
+class Engine
 {
-    public function __construct(private iterable $preProcessors, private iterable $processors, private iterable $postProcessors)
+    private array $preProcessors = [];
+    private array $processors = [];
+    private array $postProcessors = [];
+
+    public function addPostProcessor(PostProcessorInterface $postProcessor): void
     {
+        $this->postProcessors[] = $postProcessor;
+    }
+
+    public function addPreProcessor(PreProcessorInterface $preProcessor): void
+    {
+        $this->preProcessors[] = $preProcessor;
+    }
+
+    public function addProcessor(ProcessorInterface $processor): void
+    {
+        $this->processors[] = $processor;
     }
 
     public function execute(Document $document): Text

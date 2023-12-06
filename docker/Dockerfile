@@ -4,4 +4,5 @@ RUN apt-get update && apt-get install -y \
     apt-utils \
     curl \
     software-properties-common \
-    vim
+    vim \
+    zip

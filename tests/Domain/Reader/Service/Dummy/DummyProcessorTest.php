@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Tests\Domain\Reader\Service;
+namespace App\Tests\Domain\Reader\Service\Dummy;
 
 use App\Domain\Reader\Entity\Document;
 use App\Domain\Reader\Entity\Model\DummyAgreement;
