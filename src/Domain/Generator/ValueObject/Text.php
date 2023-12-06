@@ -1,6 +1,6 @@
 <?php
 
-namespace Domain\Generator\ValueObject;
+namespace App\Domain\Generator\ValueObject;
 
 readonly class Text
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace Domain\Reader\Entity;
+namespace App\Domain\Reader\Entity;
 
 class Document
 {

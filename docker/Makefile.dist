@@ -1,0 +1,25 @@
+WORKING_DIR=/var/www
+
+# docker related tasks
+
+docker-build:
+	$(MAKE) docker-build-base
+	docker-compose build
+
+docker-build-base:
+	docker build -f docker/Dockerfile -t docker_base_image .
+
+docker-down:
+	docker-compose down
+
+docker-up:
+	$(MAKE) docker-build-all
+	docker-compose up -d --remove-orphans
+
+# php related tasks
+
+php-composer-install:
+	docker-compose run php bash -c "composer install"
+
+php-composer-update:
+	docker-compose run php bash -c "composer update"

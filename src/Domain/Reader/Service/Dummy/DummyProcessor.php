@@ -1,11 +1,11 @@
 <?php
 
-namespace Domain\Reader\Service\Dummy;
+namespace App\Domain\Reader\Service\Dummy;
 
-use Domain\Reader\Entity\Document;
-use Domain\Reader\Entity\Model\DummyAgreement;
-use Domain\Reader\Entity\Model\AgreementInterface;
-use Domain\Reader\Service\ProcessorInterface;
+use App\Domain\Reader\Entity\Document;
+use App\Domain\Reader\Entity\Model\DummyAgreement;
+use App\Domain\Reader\Entity\Model\AgreementInterface;
+use App\Domain\Reader\Service\ProcessorInterface;
 
 class DummyProcessor implements ProcessorInterface
 {

@@ -1,10 +1,10 @@
 <?php
 
-namespace Domain\Generator\Service\Dummy;
+namespace App\Domain\Generator\Service\Dummy;
 
-use Domain\Generator\Entity\Document;
-use Domain\Generator\Service\ProcessorInterface;
-use Domain\Generator\ValueObject\Text;
+use App\Domain\Generator\Entity\Document;
+use App\Domain\Generator\Service\ProcessorInterface;
+use App\Domain\Generator\ValueObject\Text;
 
 class DummyProcessor implements ProcessorInterface
 {

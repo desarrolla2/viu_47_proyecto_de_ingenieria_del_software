@@ -1,9 +1,9 @@
 <?php
 
-namespace Domain\Generator\Service;
+namespace App\Domain\Generator\Service;
 
-use Domain\Generator\Entity\Document;
-use Domain\Generator\ValueObject\Text;
+use App\Domain\Generator\Entity\Document;
+use App\Domain\Generator\ValueObject\Text;
 
 interface ProcessorInterface
 {

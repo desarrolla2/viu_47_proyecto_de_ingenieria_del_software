@@ -1,10 +1,11 @@
 <?php
 
-namespace Domain\Reader\Service;
+namespace App\Tests\Domain\Reader\Service;
 
-use Domain\Reader\Entity\Document;
-use Domain\Reader\Entity\Model\DummyAgreement;
-use Domain\Reader\Service\Dummy\DummyProcessor;
+use App\Domain\Reader\Entity\Document;
+use App\Domain\Reader\Entity\Model\DummyAgreement;
+use App\Domain\Reader\Service\Dummy\DummyProcessor;
+use App\Domain\Reader\Service\Engine;
 use PHPUnit\Framework\TestCase;
 
 class EngineTest extends TestCase

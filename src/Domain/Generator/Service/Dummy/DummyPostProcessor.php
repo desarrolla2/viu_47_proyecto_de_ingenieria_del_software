@@ -1,9 +1,9 @@
 <?php
 
-namespace Domain\Generator\Service\Dummy;
+namespace App\Domain\Generator\Service\Dummy;
 
-use Domain\Generator\Service\PostProcessorInterface;
-use Domain\Generator\ValueObject\Text;
+use App\Domain\Generator\Service\PostProcessorInterface;
+use App\Domain\Generator\ValueObject\Text;
 
 class DummyPostProcessor implements PostProcessorInterface
 {

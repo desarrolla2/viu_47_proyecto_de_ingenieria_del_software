@@ -1,6 +1,6 @@
 <?php
 
-namespace Domain\Generator\Entity;
+namespace App\Domain\Generator\Entity;
 
 readonly class Document
 {

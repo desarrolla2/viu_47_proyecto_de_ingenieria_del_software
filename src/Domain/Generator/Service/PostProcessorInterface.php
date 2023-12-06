@@ -1,8 +1,8 @@
 <?php
 
-namespace Domain\Generator\Service;
+namespace App\Domain\Generator\Service;
 
-use Domain\Generator\ValueObject\Text;
+use App\Domain\Generator\ValueObject\Text;
 
 interface PostProcessorInterface
 {

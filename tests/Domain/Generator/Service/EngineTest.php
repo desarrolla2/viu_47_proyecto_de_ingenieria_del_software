@@ -1,11 +1,12 @@
 <?php
 
-namespace Domain\Generator\Service;
+namespace App\Tests\Domain\Generator\Service;
 
-use Domain\Generator\Entity\Document;
-use Domain\Generator\Service\Dummy\DummyPostProcessor;
-use Domain\Generator\Service\Dummy\DummyPreProcessor;
-use Domain\Generator\Service\Dummy\DummyProcessor;
+use App\Domain\Generator\Entity\Document;
+use App\Domain\Generator\Service\Dummy\DummyPostProcessor;
+use App\Domain\Generator\Service\Dummy\DummyPreProcessor;
+use App\Domain\Generator\Service\Dummy\DummyProcessor;
+use App\Domain\Generator\Service\Engine;
 use PHPUnit\Framework\TestCase;
 
 class EngineTest extends TestCase

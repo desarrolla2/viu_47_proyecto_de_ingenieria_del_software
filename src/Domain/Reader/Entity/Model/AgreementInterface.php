@@ -1,6 +1,6 @@
 <?php
 
-namespace Domain\Reader\Entity\Model;
+namespace App\Domain\Reader\Entity\Model;
 
 interface AgreementInterface
 {

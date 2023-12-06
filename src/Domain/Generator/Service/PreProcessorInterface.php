@@ -1,8 +1,8 @@
 <?php
 
-namespace Domain\Generator\Service;
+namespace App\Domain\Generator\Service;
 
-use Domain\Generator\Entity\Document;
+use App\Domain\Generator\Entity\Document;
 
 interface PreProcessorInterface
 {

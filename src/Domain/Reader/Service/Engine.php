@@ -1,9 +1,9 @@
 <?php
 
-namespace Domain\Reader\Service;
+namespace App\Domain\Reader\Service;
 
-use Domain\Reader\Entity\Document;
-use Domain\Reader\Entity\Model\AgreementInterface;
+use App\Domain\Reader\Entity\Document;
+use App\Domain\Reader\Entity\Model\AgreementInterface;
 
 readonly class Engine
 {
