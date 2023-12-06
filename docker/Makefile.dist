@@ -23,3 +23,8 @@ php-composer-install:
 
 php-composer-update:
 	docker-compose run php bash -c "composer update"
+
+# project related tasks
+
+tests:
+	docker-compose run php bash -c "vendor/bin/phpunit ."

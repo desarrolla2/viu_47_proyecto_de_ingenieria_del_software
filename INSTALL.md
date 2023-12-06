@@ -50,3 +50,9 @@ make php-composer-install
 ```bash
 make docker-up
 ```
+
+### 4. Run tests
+
+```bash
+make tests
+```
