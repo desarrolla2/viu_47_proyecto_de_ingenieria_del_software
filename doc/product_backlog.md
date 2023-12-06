@@ -6,10 +6,10 @@
 
 ### Issues
 
-| code | description                                                   |                                                                                             |
-|------|---------------------------------------------------------------|---------------------------------------------------------------------------------------------|
-| 001  | Análisis y definición inicial de requisitos.                  | [issue](https://github.com/desarrolla2/viu_47_proyecto_de_ingenieria_del_software/issues/1) |
-| 002  | Diseño de la arquitectura del sistema de generación de texto. | [issue](https://github.com/desarrolla2/viu_47_proyecto_de_ingenieria_del_software/issues/2) |
+| code | description                                                  |                                                                                             |
+|------|--------------------------------------------------------------|---------------------------------------------------------------------------------------------|
+| #1   | Análisis y definición inicial de requisitos                  | [issue](https://github.com/desarrolla2/viu_47_proyecto_de_ingenieria_del_software/issues/1) |
+| #2   | Diseño de la arquitectura del sistema de generación de texto | [issue](https://github.com/desarrolla2/viu_47_proyecto_de_ingenieria_del_software/issues/2) |
 
 ### References
 
@@ -21,11 +21,11 @@
 
 ### issues
 
-| code | description                                                 |                                                                                             |
-|------|-------------------------------------------------------------|---------------------------------------------------------------------------------------------|
-| 003  | Diseño de la arquitectura del sistema de lectura de texto.  | [issue](https://github.com/desarrolla2/viu_47_proyecto_de_ingenieria_del_software/issues/3) |
-| 004  | Diseño e implementación del sistema de pruebas automáticas. | [issue](https://github.com/desarrolla2/viu_47_proyecto_de_ingenieria_del_software/issues/4) |
-| 007  | Definición de un conjunto de datos de prueba.               | [issue](https://github.com/desarrolla2/viu_47_proyecto_de_ingenieria_del_software/issues/7) |
+| code | description                                                |                                                                                             |
+|------|------------------------------------------------------------|---------------------------------------------------------------------------------------------|
+| #3   | Diseño de la arquitectura del sistema de lectura de texto  | [issue](https://github.com/desarrolla2/viu_47_proyecto_de_ingenieria_del_software/issues/3) |
+| #4   | Diseño e implementación del sistema de pruebas automáticas | [issue](https://github.com/desarrolla2/viu_47_proyecto_de_ingenieria_del_software/issues/4) |
+| #7   | Definición de un conjunto de datos de prueba               | [issue](https://github.com/desarrolla2/viu_47_proyecto_de_ingenieria_del_software/issues/7) |
 
 ### references
 
@@ -39,42 +39,46 @@
 
 ### Issues
 
-| code | description                                                                                |                                                                                              |
-|------|--------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------|
-| 005  | Diseño e implementación del sistema basado en contenedores.                                | [issue](https://github.com/desarrolla2/viu_47_proyecto_de_ingenieria_del_software/issues/5)  |
-| 009  | Implementación de un procesador de texto basado en pdftotext.                              | [issue](https://github.com/desarrolla2/viu_47_proyecto_de_ingenieria_del_software/issues/9)  |
-| 011  | Investigación sobre el estado del arte de las herramientas de lectura automática de texto. | [issue](https://github.com/desarrolla2/viu_47_proyecto_de_ingenieria_del_software/issues/11) |
+| code | description                                                                               |                                                                                              |
+|------|-------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------|
+| #5   | Diseño e implementación del sistema basado en contenedores                                | [issue](https://github.com/desarrolla2/viu_47_proyecto_de_ingenieria_del_software/issues/5)  |
+| #9   | Implementación de un procesador de texto basado en pdftotext                              | [issue](https://github.com/desarrolla2/viu_47_proyecto_de_ingenieria_del_software/issues/9)  |
+| #11  | Investigación sobre el estado del arte de las herramientas de lectura automática de texto | [issue](https://github.com/desarrolla2/viu_47_proyecto_de_ingenieria_del_software/issues/11) |
 
 ### References
 
 * [milestone](https://github.com/desarrolla2/viu_47_proyecto_de_ingenieria_del_software/milestone/3)
 * plan: [video](https://youtu.be/lnvkIOcW5Pc), [notas](sprint_2/plan.md)
-* demo: [video](https://youtu.be/ibmQ574RuyM), [notas](sprint_2/demo.md)
+* demo: [video](https://youtu.be/j9hRxg8sHDc), [notas](sprint_2/demo.md)
+    * retrospectiva: [video](https://youtu.be/nJFgek1ibr4), [notas](sprint_2/retrospective.md)
 
 ## Sprint #3
 
-*Inicio 08/12/23, Final 22/12/2023*
+*Inicio 08/12/23, Final 21/12/2023*
 
 ### Issues
 
-| code | description                                                                                |                                                                                              |
-|------|--------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------|
-| 011  | Investigación sobre el estado del arte de las herramientas de lectura automática de texto. |                                                                                              |
-| 016  | Integración continua con github actions.                                                   | [issue](https://github.com/desarrolla2/viu_47_proyecto_de_ingenieria_del_software/issues/16) |
+| code | description                                                                               |                                                                                              |
+|------|-------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------|
+| #11  | Investigación sobre el estado del arte de las herramientas de lectura automática de texto | [issue](https://github.com/desarrolla2/viu_47_proyecto_de_ingenieria_del_software/issues/11) |
+| #12  | Implementación de un módulo de lectura automática de texto                                | [issue](https://github.com/desarrolla2/viu_47_proyecto_de_ingenieria_del_software/issues/12) |
+| #16  | Integración continua con github actions                                                   | [issue](https://github.com/desarrolla2/viu_47_proyecto_de_ingenieria_del_software/issues/16) |
+| #18  | Diagrama del proyecto                                                                     | [issue](https://github.com/desarrolla2/viu_47_proyecto_de_ingenieria_del_software/issues/18) |
 
 ### References
 
 * [milestone](https://github.com/desarrolla2/viu_47_proyecto_de_ingenieria_del_software/milestone/4)
+* plan: [video](https://youtu.be/V_sAufMEgDI), [notas](sprint_3/plan.md)
 
 ## Sprint #4
 
-*Inicio 23/12/23, Final 11/01/2024*
+*Inicio 22/12/23, Final 11/01/2024*
 
 ### Issues
 
-| code | description                                                 |                                                                                             |
-|------|-------------------------------------------------------------|---------------------------------------------------------------------------------------------|
-| 012  | Implementación de un módulo de lectura automática de texto. |                                                                                             |
+| code | description                                                |                                                                                             |
+|------|------------------------------------------------------------|---------------------------------------------------------------------------------------------|
+| #12  | Implementación de un módulo de lectura automática de texto |                                                                                             |
 
 ### References
 
@@ -86,10 +90,10 @@
 
 ### Issues
 
-| code | description                                              |                                                                                             |
-|------|----------------------------------------------------------|---------------------------------------------------------------------------------------------|
-| 008  | Implementación de un proceso automático de verificación. |                                                                                             |
-| 015  | Desarrollo de una interfaz de línea de comandos.         |                                                                                             |
+| code | description                                             |                                                                                             |
+|------|---------------------------------------------------------|---------------------------------------------------------------------------------------------|
+| #8   | Implementación de un proceso automático de verificación |                                                                                             |
+| #15  | Desarrollo de una interfaz de línea de comandos         |                                                                                             |
 
 ### References
 
@@ -101,10 +105,10 @@
 
 ### Issues
 
-| code | description                                                   |                                                                                             |
-|------|---------------------------------------------------------------|---------------------------------------------------------------------------------------------|
-| 013  | Elaboración de la documentación requerida para la asignatura. |                                                                                             |
-| 016  | Desarrollo de una interfaz web sencilla.                      |                                                                                             |
+| code | description                                                  |                                                                                             |
+|------|--------------------------------------------------------------|---------------------------------------------------------------------------------------------|
+| #13  | Elaboración de la documentación requerida para la asignatura |                                                                                             |
+| #17  | Desarrollo de una interfaz web sencilla                      |                                                                                             |
 
 ### References
 
