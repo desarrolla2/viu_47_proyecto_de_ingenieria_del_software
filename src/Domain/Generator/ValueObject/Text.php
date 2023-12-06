@@ -20,7 +20,6 @@ readonly class Text
 
     public function hash(): string
     {
-        return 'hash';
-        //    return hash('sha256', $this->content);
+        return hash('sha256', $this->content);
     }
 }
