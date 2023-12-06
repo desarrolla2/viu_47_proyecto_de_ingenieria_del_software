@@ -13,7 +13,7 @@ docker-down:
 	docker-compose down
 
 docker-up:
-	$(MAKE) docker-build-all
+	$(MAKE) docker-build
 	docker-compose up -d --remove-orphans
 
 # php related tasks

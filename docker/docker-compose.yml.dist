@@ -10,3 +10,7 @@ services:
             - SSH_AUTH_SOCK=/ssh-agent
         expose:
             - 9000
+
+    ollama:
+         image: ollama/ollama
+
