@@ -14,11 +14,15 @@ class Engine
     public function addPostProcessor(PostProcessorInterface $postProcessor): void
     {
         $this->postProcessors[] = $postProcessor;
+
+        $this->sortPostProcessors();
     }
 
     public function addPreProcessor(PreProcessorInterface $preProcessor): void
     {
         $this->preProcessors[] = $preProcessor;
+
+        $this->sortPreProcessors();
     }
 
     public function addProcessor(ProcessorInterface $processor): void
@@ -32,6 +36,20 @@ class Engine
         $lines = $this->executeProcessor($document);
 
         return $this->executePostProcessors($lines);
+    }
+
+    private function sortPostProcessors(): void
+    {
+        usort($this->postProcessors, function (PostProcessorInterface $postProcessor1, PostProcessorInterface $postProcessor2) {
+            return $postProcessor1::order() <=> $postProcessor2::order();
+        });
+    }
+
+    private function sortPreProcessors(): void
+    {
+        usort($this->preProcessors, function (PreProcessorInterface $preProcessor1, PreProcessorInterface $preProcessor2) {
+            return $preProcessor1::order() <=> $preProcessor2::order();
+        });
     }
 
     private function executePostProcessors(Text $text): Text
