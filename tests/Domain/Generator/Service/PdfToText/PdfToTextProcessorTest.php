@@ -5,6 +5,7 @@ namespace App\Tests\Domain\Generator\Service\PdfToText;
 use App\Domain\Generator\Entity\Document;
 use App\Domain\Generator\Service\Engine;
 use App\Domain\Generator\Service\PdfToText\PdfToTextProcessor;
+use App\Infrastructure\Component\CommandRunner\SymfonyCommandRunner;
 use PHPUnit\Framework\TestCase;
 
 class PdfToTextProcessorTest extends TestCase
@@ -27,7 +28,7 @@ class PdfToTextProcessorTest extends TestCase
     public function testPdfToTextProcessor(string $fileName, array $stringsRequired): void
     {
         $engine = new Engine();
-        $engine->addProcessor(new PdfToTextProcessor());
+        $engine->addProcessor(new PdfToTextProcessor(new SymfonyCommandRunner()));
         $document = new Document($fileName);
         $text = $engine->execute($document);
 
