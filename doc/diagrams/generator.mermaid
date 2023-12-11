@@ -1,24 +1,28 @@
 classDiagram
     direction LR
-    Engine o-- PreProcessorInterface: call
-    Engine o-- ProcessorInterface: call
-    Engine o-- PostProcessorInterface: call
+    Domain_Engine o-- Domain_PreProcessorInterface: call
+    Domain_Engine o-- Domain_ProcessorInterface: call
+    Domain_Engine o-- Domain_PostProcessorInterface: call
+    Domain_PreProcessorInterface <|-- Domain_DummyPreProcessor
+    Domain_ProcessorInterface <|-- Domain_DummyProcessor: implements
+    Domain_ProcessorInterface <|-- Infrastructure_PdfToTextProcessor: implements
+    Domain_PostProcessorInterface <|-- Domain_DummyPostProcessor
 
-    class Engine {
+    class Domain_Engine {
         + execute(Document $document): array
     }
 
-    class PreProcessorInterface {
+    class Domain_PreProcessorInterface {
         + execute(Document $document): void
         + order(): int
     }
 
-    class ProcessorInterface {
+    class Domain_ProcessorInterface {
         + execute(Document $document): Text
         + score(Document $document): int
     }
 
-    class PostProcessorInterface {
+    class Domain_PostProcessorInterface {
         + execute(Text $text): Text
         + order(): int
     }
