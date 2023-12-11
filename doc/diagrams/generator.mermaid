@@ -3,10 +3,9 @@ classDiagram
     Domain_Engine o-- Domain_PreProcessorInterface: call
     Domain_Engine o-- Domain_ProcessorInterface: call
     Domain_Engine o-- Domain_PostProcessorInterface: call
-    Domain_PreProcessorInterface <|-- Domain_DummyPreProcessor
-    Domain_ProcessorInterface <|-- Domain_DummyProcessor: implements
-    Domain_ProcessorInterface <|-- Infrastructure_PdfToTextProcessor: implements
-    Domain_PostProcessorInterface <|-- Domain_DummyPostProcessor
+    Domain_ProcessorInterface <|-- Infrastructure_PdfToText_Processor: implements
+    Domain_PostProcessorInterface <|-- Domain_CharacterReplace_PostProcessor: implements
+    Domain_PostProcessorInterface <|-- Infrastructure_UTF8_Processor: implements
 
     class Domain_Engine {
         + execute(Document $document): array
