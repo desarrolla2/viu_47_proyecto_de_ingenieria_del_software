@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Domain\Generator\Service\PdfToText;
+namespace App\Infrastructure\Generator\Service\PdfToText;
 
 use App\Domain\Generator\Component\CommandRunner\CommandRunnerInterface;
 use App\Domain\Generator\Entity\Document;

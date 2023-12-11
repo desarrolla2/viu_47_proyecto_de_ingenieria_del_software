@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Tests\Domain\Generator\Service\PdfToText;
+namespace App\Tests\Infrastructure\Generator\Service\PdfToText;
 
 use App\Domain\Generator\Entity\Document;
 use App\Domain\Generator\Service\Engine;
-use App\Domain\Generator\Service\PdfToText\PdfToTextProcessor;
-use App\Infrastructure\Component\CommandRunner\SymfonyCommandRunner;
+use App\Infrastructure\Generator\Component\CommandRunner\SymfonyCommandRunner;
+use App\Infrastructure\Generator\Service\PdfToText\PdfToTextProcessor;
 use PHPUnit\Framework\TestCase;
 
 class PdfToTextProcessorTest extends TestCase

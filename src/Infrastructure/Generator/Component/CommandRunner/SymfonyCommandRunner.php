@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Infrastructure\Component\CommandRunner;
+namespace App\Infrastructure\Generator\Component\CommandRunner;
 
 use App\Domain\Generator\Component\CommandRunner\CommandRunnerInterface;
 use Symfony\Component\Process\Exception\ProcessFailedException;
