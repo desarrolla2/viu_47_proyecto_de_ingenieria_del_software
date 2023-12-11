@@ -10,7 +10,7 @@ use PHPUnit\Framework\TestCase;
 
 class DummyProcessorTest extends TestCase
 {
-    public function testDummyProcessor()
+    public function testProcessor()
     {
         $engine = new Engine([new DummyProcessor()],);
 

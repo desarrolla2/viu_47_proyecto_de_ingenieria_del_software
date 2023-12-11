@@ -10,7 +10,7 @@ use PHPUnit\Framework\TestCase;
 
 class PdfToTextProcessorTest extends TestCase
 {
-    public function dataProviderForTestPdfToTextProcessor(): array
+    public function dataProviderForTestProcessor(): array
     {
         return [
             ['/var/www/tests/data/output/001.pdf', ['CONTRATO DE ARRENDAMIENTO DE VIVIENDA']],
@@ -24,8 +24,8 @@ class PdfToTextProcessorTest extends TestCase
         ];
     }
 
-    /** @dataProvider dataProviderForTestPdfToTextProcessor */
-    public function testPdfToTextProcessor(string $fileName, array $stringsRequired): void
+    /** @dataProvider dataProviderForTestProcessor */
+    public function testProcessor(string $fileName, array $stringsRequired): void
     {
         $engine = new Engine();
         $engine->addProcessor(new PdfToTextProcessor(new SymfonyCommandRunner()));

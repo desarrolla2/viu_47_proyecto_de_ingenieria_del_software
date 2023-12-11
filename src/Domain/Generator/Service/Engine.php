@@ -16,14 +16,35 @@ class Engine
         $this->postProcessors[] = $postProcessor;
     }
 
+    public function addPostProcessors($postProcessors): void
+    {
+        foreach ($postProcessors as $postProcessor) {
+            $this->addPostProcessor($postProcessor);
+        }
+    }
+
     public function addPreProcessor(PreProcessorInterface $preProcessor): void
     {
         $this->preProcessors[] = $preProcessor;
     }
 
+    public function addPreProcessors($preProcessors): void
+    {
+        foreach ($preProcessors as $preProcessor) {
+            $this->addPreProcessor($preProcessor);
+        }
+    }
+
     public function addProcessor(ProcessorInterface $processor): void
     {
         $this->processors[] = $processor;
+    }
+
+    public function addProcessors($processors): void
+    {
+        foreach ($processors as $processor) {
+            $this->addProcessor($processor);
+        }
     }
 
     public function execute(Document $document): Text
