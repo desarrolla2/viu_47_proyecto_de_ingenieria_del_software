@@ -16,7 +16,7 @@ readonly class DavinciProcessor implements ProcessorInterface
 
     public function __construct(private HttpClientInterface $httpClient)
     {
-        $this->httpClient->withOptions(['auth_bearer' => '',]);
+        $this->httpClient->withOptions(['auth_bearer' => $this->getBearer(),]);
     }
 
     public function execute(Text $text): AgreementInterface
@@ -47,7 +47,7 @@ readonly class DavinciProcessor implements ProcessorInterface
 
     public function score(Text $text): int
     {
-        $response = $this->request(sprintf('En el siguiente contrato:\n\n %s \n\nResponde sólamente SI o NO, ¿Se trata de un contrato de compraventa?', $text->content()));
+        $response = $this->request(sprintf('En el siguiente contrato:\n\n %s \n\nResponde sólamente SI o NO, ¿Se trata de un contrato de arrendamiento de una vivienda?', $text->content()));
 
         $message = $this->getMessage($response);
 
@@ -56,6 +56,11 @@ readonly class DavinciProcessor implements ProcessorInterface
         }
 
         return 0;
+    }
+
+    protected function getBearer(): string
+    {
+        return 'sk-';
     }
 
     private function getMessage(array $response): string
