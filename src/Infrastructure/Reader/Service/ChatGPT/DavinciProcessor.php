@@ -23,7 +23,7 @@ readonly class DavinciProcessor implements ProcessorInterface
     {
         $response = $this->request(
             sprintf(
-                'En el siguiente contrato:\n\n %s \n\nIndica nombres y apellidos de los propietarios en el sigiente formato:\npropietario: nombre y apellidos, dni\n\nA continuación Indica nombres y apellidos de los inquilinos en el sigiente formato:\inquilino: nombre y apellidos, dni',
+                'En el siguiente contrato:\n\n %s \n\nIndica nombres y apellidos de los propietarios en el siguiente formato:\npropietario: nombre y apellidos, dni\n\nA continuación Indica nombres y apellidos de los inquilinos en el sigiente formato:\inquilino: nombre y apellidos, dni',
                 $text->content()
             )
         );
