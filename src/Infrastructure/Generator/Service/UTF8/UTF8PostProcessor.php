@@ -10,7 +10,7 @@ class UTF8PostProcessor implements PostProcessorInterface
 {
     public static function order(): int
     {
-        return 0;
+        return 100;
     }
 
     public function execute(Text $text): Text

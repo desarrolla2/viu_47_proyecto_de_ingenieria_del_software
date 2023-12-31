@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Domain\Generator\Component\CommandRunner;
+namespace App\Domain\Component\CommandRunner;
 
 interface CommandRunnerInterface
 {

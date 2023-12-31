@@ -2,7 +2,7 @@
 
 namespace App\Infrastructure\Generator\Service\PdfToText;
 
-use App\Domain\Generator\Component\CommandRunner\CommandRunnerInterface;
+use App\Domain\Component\CommandRunner\CommandRunnerInterface;
 use App\Domain\Generator\Entity\Document;
 use App\Domain\Generator\Service\ProcessorInterface;
 use App\Domain\Generator\ValueObject\Text;

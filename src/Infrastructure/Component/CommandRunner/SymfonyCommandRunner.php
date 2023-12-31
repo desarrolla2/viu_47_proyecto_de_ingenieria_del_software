@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Infrastructure\Generator\Component\CommandRunner;
+namespace App\Infrastructure\Component\CommandRunner;
 
-use App\Domain\Generator\Component\CommandRunner\CommandRunnerInterface;
+use App\Domain\Component\CommandRunner\CommandRunnerInterface;
 use Symfony\Component\Process\Exception\ProcessFailedException;
 use Symfony\Component\Process\Process;
 

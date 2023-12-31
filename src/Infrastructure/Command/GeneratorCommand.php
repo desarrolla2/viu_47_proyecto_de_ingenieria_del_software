@@ -3,7 +3,7 @@
 namespace App\Infrastructure\Command;
 
 use App\Domain\Generator\Entity\Document;
-use App\Domain\Generator\Service\Engine;
+use App\Domain\Generator\Service\GeneratorEngine;
 use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
@@ -17,7 +17,7 @@ use Symfony\Component\Console\Style\SymfonyStyle;
 )]
 class GeneratorCommand extends Command
 {
-    public function __construct(private readonly Engine $engine)
+    public function __construct(private readonly GeneratorEngine $engine)
     {
         parent::__construct();
     }

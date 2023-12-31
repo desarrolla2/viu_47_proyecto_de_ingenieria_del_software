@@ -2,10 +2,10 @@
 
 namespace App\Tests\Domain\Reader\Service;
 
-use App\Domain\Reader\Entity\Document;
-use App\Domain\Reader\Entity\Model\DummyAgreement;
+use App\Domain\Reader\Entity\DummyAgreement;
 use App\Domain\Reader\Service\Dummy\DummyProcessor;
-use App\Domain\Reader\Service\Engine;
+use App\Domain\Reader\Service\ReaderEngine;
+use App\Domain\Reader\ValueObject\Text;
 use PHPUnit\Framework\TestCase;
 
 class EngineTest extends TestCase
@@ -27,9 +27,9 @@ class EngineTest extends TestCase
     /** @dataProvider dataProviderForTestEngine */
     public function testEngine(string $fileName, string $hash): void
     {
-        $engine = new Engine([new DummyProcessor()],);
+        $engine = new ReaderEngine([new DummyProcessor()],);
 
-        $document = new Document($fileName);
+        $document = new Text($fileName);
         $text = $engine->execute($document);
 
         $this->assertInstanceOf(DummyAgreement::class, $text);

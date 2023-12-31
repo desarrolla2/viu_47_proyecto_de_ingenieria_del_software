@@ -2,20 +2,20 @@
 
 namespace App\Domain\Reader\Service\Dummy;
 
-use App\Domain\Reader\Entity\Document;
-use App\Domain\Reader\Entity\Model\DummyAgreement;
-use App\Domain\Reader\Entity\Model\AgreementInterface;
+use App\Domain\Reader\Entity\AgreementInterface;
+use App\Domain\Reader\Entity\DummyAgreement;
 use App\Domain\Reader\Service\ProcessorInterface;
+use App\Domain\Reader\ValueObject\Text;
 
 class DummyProcessor implements ProcessorInterface
 {
-    public function execute(Document $document): AgreementInterface
+    public function execute(Text $text): AgreementInterface
     {
         return new DummyAgreement();
     }
 
-    public function score(Document $document): int
+    public function score(Text $text): int
     {
-        return 0;
+        return 1;
     }
 }

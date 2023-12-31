@@ -5,7 +5,7 @@ namespace App\Domain\Generator\Service;
 use App\Domain\Generator\Entity\Document;
 use App\Domain\Generator\ValueObject\Text;
 
-class Engine
+class GeneratorEngine
 {
     private array $preProcessors = [];
     private array $processors = [];

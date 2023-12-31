@@ -2,28 +2,38 @@
 
 namespace App\Domain\Reader\Service;
 
-use App\Domain\Reader\Entity\Document;
-use App\Domain\Reader\Entity\Model\AgreementInterface;
+use App\Domain\Reader\Entity\AgreementInterface;
+use App\Domain\Reader\ValueObject\Text;
 
-readonly class Engine
+class ReaderEngine
 {
-    public function __construct(private iterable $processors)
+    private array $processors = [];
+
+    public function addProcessor(ProcessorInterface $processor): void
     {
+        $this->processors[] = $processor;
     }
 
-    public function execute(Document $document): AgreementInterface
+    public function addProcessors($processors): void
+    {
+        foreach ($processors as $processor) {
+            $this->addProcessor($processor);
+        }
+    }
+
+    public function execute(Text $document): AgreementInterface
     {
         return $this->executeProcessor($document);
     }
 
-    private function executeProcessor(Document $document): AgreementInterface
+    private function executeProcessor(Text $document): AgreementInterface
     {
         $processor = $this->getProcessor($document);
 
         return $processor->execute($document);
     }
 
-    private function getProcessor(Document $document): ProcessorInterface
+    private function getProcessor(Text $document): ProcessorInterface
     {
         $scores = [];
         /** @var ProcessorInterface $processor */

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Domain\Reader\Entity\Model;
+namespace App\Domain\Reader\Entity;
 
 class DummyAgreement implements AgreementInterface
 {

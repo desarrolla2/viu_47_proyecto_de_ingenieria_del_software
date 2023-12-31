@@ -2,12 +2,12 @@
 
 namespace App\Domain\Reader\Service;
 
-use App\Domain\Reader\Entity\Document;
-use App\Domain\Reader\Entity\Model\AgreementInterface;
+use App\Domain\Reader\Entity\AgreementInterface;
+use App\Domain\Reader\ValueObject\Text;
 
 interface ProcessorInterface
 {
-    public function execute(Document $document): AgreementInterface;
+    public function execute(Text $text): AgreementInterface;
 
-    public function score(Document $document): int;
+    public function score(Text $text): int;
 }

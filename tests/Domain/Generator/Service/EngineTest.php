@@ -6,7 +6,7 @@ use App\Domain\Generator\Entity\Document;
 use App\Domain\Generator\Service\Dummy\DummyPostProcessor;
 use App\Domain\Generator\Service\Dummy\DummyPreProcessor;
 use App\Domain\Generator\Service\Dummy\DummyProcessor;
-use App\Domain\Generator\Service\Engine;
+use App\Domain\Generator\Service\GeneratorEngine;
 use PHPUnit\Framework\TestCase;
 
 class EngineTest extends TestCase
@@ -21,7 +21,7 @@ class EngineTest extends TestCase
     /** @dataProvider dataProviderForTestEngine */
     public function testEngine(string $fileName, string $content): void
     {
-        $engine = new Engine();
+        $engine = new GeneratorEngine();
 
         $engine->addPreProcessor(new DummyPreProcessor());
         $engine->addProcessor(new DummyProcessor());
