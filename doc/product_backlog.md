@@ -50,7 +50,7 @@
 * [milestone](https://github.com/desarrolla2/viu_47_proyecto_de_ingenieria_del_software/milestone/3)
 * plan: [video](https://youtu.be/lnvkIOcW5Pc), [notas](sprint_2/plan.md)
 * demo: [video](https://youtu.be/j9hRxg8sHDc), [notas](sprint_2/demo.md)
-    * retrospectiva: [video](https://youtu.be/nJFgek1ibr4), [notas](sprint_2/retrospective.md)
+* retrospectiva: [video](https://youtu.be/nJFgek1ibr4), [notas](sprint_2/retrospective.md)
 
 ## Sprint #3
 
@@ -69,6 +69,8 @@
 
 * [milestone](https://github.com/desarrolla2/viu_47_proyecto_de_ingenieria_del_software/milestone/4)
 * plan: [video](https://youtu.be/V_sAufMEgDI), [notas](sprint_3/plan.md)
+* demo: [video](https://youtu.be/U2yilI_bNGU), [notas](sprint_3/demo.md)
+* retrospectiva: [video](), [notas](sprint_3/retrospective.md)
 
 ## Sprint #4
 
