@@ -9,22 +9,27 @@ class ResidentialLeaseAgreement implements AgreementInterface
 
     public function addLandLord(Person $person): void
     {
-        $this->landLords[$person->getNumber()] = $person;
+        $this->landLords[$person->number()] = $person;
     }
 
     public function addTenant(Person $person): void
     {
-        $this->tenants[$person->getNumber()] = $person;
+        $this->tenants[$person->number()] = $person;
     }
 
     /** @return Person[] */
-    public function getLandLords(): array
+    public function landLords(): array
     {
         return $this->landLords;
     }
 
+    public function parties(): array
+    {
+        return array_merge($this->landLords(), $this->tenants());
+    }
+
     /** @return Person[] */
-    public function getTenants(): array
+    public function tenants(): array
     {
         return $this->tenants;
     }

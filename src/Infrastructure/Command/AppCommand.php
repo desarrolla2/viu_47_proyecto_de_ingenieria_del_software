@@ -8,12 +8,13 @@ use App\Domain\Reader\Service\ReaderEngine;
 use App\Domain\Reader\ValueObject\Text as ReaderText;
 use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Command\Command;
+use Symfony\Component\Console\Helper\Table;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Style\SymfonyStyle;
 
-#[AsCommand(name: 'app:run', description: 'Add a short description for your command',)]
+#[AsCommand(name: 'app:run', description: 'extracts the content of a PDF document and if it is contract, indicates the parties involved',)]
 class AppCommand extends Command
 {
     public function __construct(private readonly GeneratorEngine $generatorEngine, private readonly ReaderEngine $readerEngine)
@@ -38,7 +39,13 @@ class AppCommand extends Command
         $readerText = new ReaderText($text->content());
         $agreement = $this->readerEngine->execute($readerText);
 
-        dump($agreement);
+        $table = new Table($output);
+        $table->setHeaders(['Name', 'Number',]);
+        foreach ($agreement->parties() as $person) {
+            $table->addRow([$person->name(), $person->number()]);
+        }
+
+        $table->render();
 
         return Command::SUCCESS;
     }

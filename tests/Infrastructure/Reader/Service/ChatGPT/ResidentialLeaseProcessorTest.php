@@ -2,6 +2,7 @@
 
 namespace App\Tests\Infrastructure\Reader\Service\ChatGPT;
 
+use App\Domain\Reader\Entity\Person;
 use App\Domain\Reader\Entity\ResidentialLeaseAgreement;
 use App\Domain\Reader\Service\ReaderEngine;
 use App\Domain\Reader\ValueObject\Text;
@@ -42,15 +43,16 @@ class ResidentialLeaseProcessorTest extends TestCase
         /** @var ResidentialLeaseAgreement $agreement */
         $agreement = $engine->execute(new Text());
         $this->assertInstanceOf(ResidentialLeaseAgreement::class, $agreement);
-        $this->assert($agreement->getLandLords(), $landLords['numbers']);
-        $this->assert($agreement->getTenants(), $tenants['numbers']);
+        $this->assert($agreement->landLords(), $landLords['numbers']);
+        $this->assert($agreement->tenants(), $tenants['numbers']);
     }
 
     private function assert(array $persons, array $expectedNumbers): void
     {
         $numbers = [];
+        /** @var Person $person */
         foreach ($persons as $person) {
-            $numbers[] = $person->getNumber();
+            $numbers[] = $person->number();
         }
         $this->assertSameSize($expectedNumbers, $numbers);
         foreach ($expectedNumbers as $expectedNumber) {

@@ -11,10 +11,7 @@ use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Style\SymfonyStyle;
 
-#[AsCommand(
-    name: 'app:generator:run',
-    description: 'Add a short description for your command',
-)]
+#[AsCommand(name: 'app:generator:run', description: 'Extracts the content of a PDF document and transforms it into text',)]
 class GeneratorCommand extends Command
 {
     public function __construct(private readonly GeneratorEngine $engine)
@@ -25,22 +22,18 @@ class GeneratorCommand extends Command
     protected function configure(): void
     {
         $this
-            ->addArgument('input', InputArgument::REQUIRED, 'path to file')
-            ->addArgument('output', InputArgument::REQUIRED, 'path to file');
+            ->addArgument('input', InputArgument::REQUIRED, 'path to file');
     }
 
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
         $io = new SymfonyStyle($input, $output);
         $inputArgument = $input->getArgument('input');
-        $outputArgument = $input->getArgument('output');
 
         $document = new Document($inputArgument);
         $text = $this->engine->execute($document);
 
-        file_put_contents($outputArgument, $text->content());
-
-        $io->success('You have a new command! Now make it your own! Pass --help to see your options.');
+        $io->text($text->content());
 
         return Command::SUCCESS;
     }

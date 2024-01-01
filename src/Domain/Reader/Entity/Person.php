@@ -4,16 +4,16 @@ namespace App\Domain\Reader\Entity;
 
 readonly class Person
 {
-    public function __construct(private string $fullName, private string $number)
+    public function __construct(private string $name, private string $number)
     {
     }
 
-    public function getFullName(): string
+    public function name(): string
     {
-        return $this->fullName;
+        return $this->name;
     }
 
-    public function getNumber(): string
+    public function number(): string
     {
         return $this->number;
     }
