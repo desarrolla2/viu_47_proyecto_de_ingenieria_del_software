@@ -7,6 +7,7 @@ use App\Domain\Generator\Service\GeneratorEngine;
 use App\Infrastructure\Component\CommandRunner\SymfonyCommandRunner;
 use App\Infrastructure\Generator\Service\PdfToText\PdfToTextProcessor;
 use PHPUnit\Framework\TestCase;
+use Psr\Log\NullLogger;
 
 class PdfToTextProcessorTest extends TestCase
 {
@@ -27,7 +28,7 @@ class PdfToTextProcessorTest extends TestCase
     /** @dataProvider dataProviderForTestProcessor */
     public function testProcessor(string $fileName, array $stringsRequired): void
     {
-        $engine = new GeneratorEngine();
+        $engine = new GeneratorEngine(new NullLogger());
         $engine->addProcessor(new PdfToTextProcessor(new SymfonyCommandRunner()));
         $document = new Document($fileName);
         $text = $engine->execute($document);

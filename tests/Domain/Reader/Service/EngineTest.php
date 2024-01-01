@@ -7,6 +7,7 @@ use App\Domain\Reader\Service\Dummy\DummyProcessor;
 use App\Domain\Reader\Service\ReaderEngine;
 use App\Domain\Reader\ValueObject\Text;
 use PHPUnit\Framework\TestCase;
+use Psr\Log\NullLogger;
 
 class EngineTest extends TestCase
 {
@@ -27,7 +28,7 @@ class EngineTest extends TestCase
     /** @dataProvider dataProviderForTestEngine */
     public function testEngine(string $fileName, string $hash): void
     {
-        $engine = new ReaderEngine();
+        $engine = new ReaderEngine(new NullLogger());
         $engine->addProcessors([new DummyProcessor()]);
 
         $document = new Text($fileName);

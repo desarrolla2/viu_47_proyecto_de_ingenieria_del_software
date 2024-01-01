@@ -8,6 +8,7 @@ use App\Domain\Generator\Service\Dummy\DummyPreProcessor;
 use App\Domain\Generator\Service\Dummy\DummyProcessor;
 use App\Domain\Generator\Service\GeneratorEngine;
 use PHPUnit\Framework\TestCase;
+use Psr\Log\NullLogger;
 
 class EngineTest extends TestCase
 {
@@ -21,7 +22,7 @@ class EngineTest extends TestCase
     /** @dataProvider dataProviderForTestEngine */
     public function testEngine(string $fileName, string $content): void
     {
-        $engine = new GeneratorEngine();
+        $engine = new GeneratorEngine(new NullLogger());
 
         $engine->addPreProcessor(new DummyPreProcessor());
         $engine->addProcessor(new DummyProcessor());
