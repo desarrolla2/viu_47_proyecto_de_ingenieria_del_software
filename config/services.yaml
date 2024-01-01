@@ -43,5 +43,9 @@ services:
         calls:
             -   'addProcessors': [ !tagged_iterator 'app.domain.reader.service.processor' ]
     
+    App\Infrastructure\Reader\Service\ChatGPT\ChatGPTProcessor:
+        arguments:
+            $authenticationToken: '%env(string:OPENAI_AUTHENTICATION_TOKEN)%'
+    
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones

@@ -10,13 +10,14 @@ use App\Domain\Reader\Service\ProcessorInterface;
 use App\Domain\Reader\ValueObject\Text;
 use Symfony\Component\HttpFoundation\Request;
 
-readonly class DavinciProcessor implements ProcessorInterface
+readonly class ChatGPTProcessor implements ProcessorInterface
 {
     const ENDPOINT = 'https://api.openai.com/v1/chat/completions';
+    const MODEL = 'gpt-3.5-turbo';
 
-    public function __construct(private HttpClientInterface $httpClient)
+    public function __construct(private HttpClientInterface $httpClient, string $authenticationToken)
     {
-        $this->httpClient->withOptions(['auth_bearer' => $this->getBearer(),]);
+        $this->httpClient->withOptions(['auth_bearer' => $authenticationToken,]);
     }
 
     public function execute(Text $text): AgreementInterface
@@ -88,7 +89,7 @@ readonly class DavinciProcessor implements ProcessorInterface
     private function request(string $content): array
     {
         $json = [
-            'model' => 'gpt-3.5-turbo',
+            'model' => self::MODEL,
             'messages' => [
                 ['role' => 'system', 'content' => 'Eres un abogado. Responde a cada pregunta con precisión y pocas palabras',],
                 ['role' => 'user', 'content' => $content,],

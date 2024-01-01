@@ -90,7 +90,7 @@
 
 ## Sprint #5
 
-*Inicio 12/01/24, Final 11/01/2024*
+*Inicio 12/01/24, Final 25/01/2024*
 
 ### Issues
 
