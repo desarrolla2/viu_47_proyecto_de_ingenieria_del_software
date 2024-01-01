@@ -2,9 +2,11 @@
 
 ### Issues
 
-| code | description                                                |                                                                                              |
-|------|------------------------------------------------------------|----------------------------------------------------------------------------------------------|
-| #12  | Implementación de un módulo de lectura automática de texto | [issue](https://github.com/desarrolla2/viu_47_proyecto_de_ingenieria_del_software/issues/12) |
+| code | description                                             |                                                                                              |
+|------|---------------------------------------------------------|----------------------------------------------------------------------------------------------|
+| #12  | Implementar de un módulo de lectura automática de texto | [issue](https://github.com/desarrolla2/viu_47_proyecto_de_ingenieria_del_software/issues/12) |
+| #19  | Implementar un sistema de registros                     | [issue](https://github.com/desarrolla2/viu_47_proyecto_de_ingenieria_del_software/issues/19) |
+| #20  | Implementar un sistema de cache de peticiones HTTP      | [issue](https://github.com/desarrolla2/viu_47_proyecto_de_ingenieria_del_software/issues/20) |
 
 ### References
 
