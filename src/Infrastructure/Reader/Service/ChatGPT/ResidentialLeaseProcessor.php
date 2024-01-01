@@ -3,14 +3,13 @@
 namespace App\Infrastructure\Reader\Service\ChatGPT;
 
 use App\Domain\Component\HttpClient\HttpClientInterface;
-use App\Domain\Reader\Entity\AgreementInterface;
 use App\Domain\Reader\Entity\Person;
 use App\Domain\Reader\Entity\ResidentialLeaseAgreement;
 use App\Domain\Reader\Service\ProcessorInterface;
 use App\Domain\Reader\ValueObject\Text;
 use Symfony\Component\HttpFoundation\Request;
 
-readonly class ChatGPTProcessor implements ProcessorInterface
+readonly class ResidentialLeaseProcessor implements ProcessorInterface
 {
     const ENDPOINT = 'https://api.openai.com/v1/chat/completions';
     const MODEL = 'gpt-3.5-turbo';
@@ -20,14 +19,15 @@ readonly class ChatGPTProcessor implements ProcessorInterface
         $this->httpClient->withOptions(['auth_bearer' => $authenticationToken,]);
     }
 
-    public function execute(Text $text): AgreementInterface
+    public function execute(Text $text): ResidentialLeaseAgreement
     {
-        $response = $this->request(
-            sprintf(
-                'En el siguiente contrato:\n\n %s \n\nIndica nombres y apellidos de los propietarios en el siguiente formato:\npropietario: nombre y apellidos, dni\n\nA continuación Indica nombres y apellidos de los inquilinos en el sigiente formato:\inquilino: nombre y apellidos, dni',
-                $text->content()
-            )
-        );
+        $content = 'Tengo el siguiente contrato:'.PHP_EOL
+            .$text->content().'[...]'.PHP_EOL.PHP_EOL.
+            'Completa los datos de la siguiente tabla'.PHP_EOL.
+            'PROPIETARIO: _NOMBRE_Y_APPELLIDOS_, _DNI_'.PHP_EOL.
+            'ARRENDATARIO: _NOMBRE_Y_APPELLIDOS_, _DNI:'.PHP_EOL;
+
+        $response = $this->request($content);
         $agreement = new ResidentialLeaseAgreement();
         $message = $this->getMessage($response);
         $lines = explode(PHP_EOL, $message);
@@ -36,12 +36,11 @@ readonly class ChatGPTProcessor implements ProcessorInterface
                 $line = str_replace('propietario:', '', $line);
                 $agreement->addLandLord($this->person($line));
             }
-            if (str_contains($line, 'inquilino:')) {
-                $line = str_replace('inquilino:', '', $line);
+            if (str_contains($line, 'arrendatario:')) {
+                $line = str_replace('arrendatario:', '', $line);
                 $agreement->addTenant($this->person($line));
             }
         }
-        dump($agreement);
 
         return $agreement;
     }
@@ -57,11 +56,6 @@ readonly class ChatGPTProcessor implements ProcessorInterface
         }
 
         return 0;
-    }
-
-    protected function getBearer(): string
-    {
-        return 'sk-';
     }
 
     private function getMessage(array $response): string
@@ -96,10 +90,6 @@ readonly class ChatGPTProcessor implements ProcessorInterface
             ],
         ];
 
-        dump(json_encode($json));
-
-        return $this->httpClient->request(Request::METHOD_POST, self::ENDPOINT, [
-            'json' => $json,
-        ]);
+        return $this->httpClient->request(Request::METHOD_POST, self::ENDPOINT, ['json' => $json,]);
     }
 }

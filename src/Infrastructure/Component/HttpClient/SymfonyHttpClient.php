@@ -20,7 +20,7 @@ class SymfonyHttpClient implements HttpClientInterface
 
     public function request(string $method, string $path, array $body): array
     {
-        $cacheKey = hash('sha256', json_encode($body));
+        $cacheKey = $this->getCacheKey($method, $path, $body);
         $this->log(sprintf('[request]: "%s" "%s"', $method, $path), ['body' => json_encode($body), 'cache_key' => $cacheKey]);
 
         $responseContent = $this->cache->get($cacheKey, function (ItemInterface $item) use ($method, $path, $body): string {
@@ -46,6 +46,11 @@ class SymfonyHttpClient implements HttpClientInterface
     public function withOptions(array $array): void
     {
         $this->httpClient = $this->httpClient->withOptions($array);
+    }
+
+    private function getCacheKey(string $method, string $path, array $body): string
+    {
+        return hash('sha256', sprintf('%s %s: %s', $method, $path, json_encode($body)));
     }
 
     private function log(string $message, array $context = []): void

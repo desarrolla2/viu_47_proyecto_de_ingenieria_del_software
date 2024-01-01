@@ -40,8 +40,6 @@ class GeneratorCommand extends Command
 
         file_put_contents($outputArgument, $text->content());
 
-        dump($text);
-
         $io->success('You have a new command! Now make it your own! Pass --help to see your options.');
 
         return Command::SUCCESS;

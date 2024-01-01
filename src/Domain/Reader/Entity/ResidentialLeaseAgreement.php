@@ -17,4 +17,16 @@ class ResidentialLeaseAgreement implements AgreementInterface
         $this->tenants[$person->getNumber()] = $person;
     }
 
+    /** @return Person[] */
+    public function getLandLords(): array
+    {
+        return $this->landLords;
+    }
+
+    /** @return Person[] */
+    public function getTenants(): array
+    {
+        return $this->tenants;
+    }
+
 }

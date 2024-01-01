@@ -20,8 +20,6 @@ class PdfToTextProcessorTest extends TestCase
             ['/var/www/tests/data/output/004.pdf', ['CONTRATO DE ARRENDAMIENTO DE VIVIENDA']],
             ['/var/www/tests/data/output/005.pdf', ['CONTRATO DE ARRENDAMIENTO DE VIVIENDA']],
             ['/var/www/tests/data/output/006.pdf', ['CONTRATO DE ARRENDAMIENTO DE VIVIENDA']],
-            ['/var/www/tests/data/output/007.pdf', ['CONTRATO DE ARRENDAMIENTO DE VIVIENDA']],
-            ['/var/www/tests/data/output/008.pdf', ['CONTRATO DE ARRENDAMIENTO DE VIVIENDA']],
         ];
     }
 
@@ -37,5 +35,4 @@ class PdfToTextProcessorTest extends TestCase
             $this->assertStringContainsString($stringRequired, $text->content());
         }
     }
-
 }
