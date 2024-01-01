@@ -84,7 +84,6 @@
 
 ### References
 
-
 * [milestone](https://github.com/desarrolla2/viu_47_proyecto_de_ingenieria_del_software/milestone/5)
 * plan: [video](https://youtu.be/ZSU2u2kAsHQ), [notas](sprint_4/plan.md)
 

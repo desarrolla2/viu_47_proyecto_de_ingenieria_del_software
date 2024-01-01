@@ -4,6 +4,7 @@ namespace App\Infrastructure\Component\HttpClient;
 
 use App\Domain\Component\HttpClient\HttpClientInterface;
 use Psr\Log\LoggerInterface;
+use RuntimeException;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Contracts\Cache\CacheInterface;
 use Symfony\Contracts\Cache\ItemInterface;
@@ -31,7 +32,7 @@ class SymfonyHttpClient implements HttpClientInterface
             if ($response->getStatusCode() !== Response::HTTP_OK) {
                 $this->log(sprintf('[response]: "%s"', $response->getStatusCode()), ['body' => $response->getContent(),]);
 
-                throw new \RuntimeException($response->getContent());
+                throw new RuntimeException($response->getContent());
             }
 
             return $response->getContent();
