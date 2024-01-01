@@ -21,6 +21,8 @@ readonly class ResidentialLeaseProcessor implements ProcessorInterface
 
     public function execute(Text $text): ResidentialLeaseAgreement
     {
+        $agreement = new ResidentialLeaseAgreement();
+
         $content = 'Tengo el siguiente contrato:'.PHP_EOL
             .$text->content().'[...]'.PHP_EOL.PHP_EOL.
             'Completa los datos de la siguiente tabla'.PHP_EOL.
@@ -28,8 +30,8 @@ readonly class ResidentialLeaseProcessor implements ProcessorInterface
             'ARRENDATARIO: _NOMBRE_Y_APPELLIDOS_, _DNI:'.PHP_EOL;
 
         $response = $this->request($content);
-        $agreement = new ResidentialLeaseAgreement();
-        $message = $this->getMessage($response);
+        $message = $this->getMessageFromResponse($response);
+
         $lines = explode(PHP_EOL, $message);
         foreach ($lines as $line) {
             if (str_contains($line, 'propietario:')) {
@@ -49,7 +51,7 @@ readonly class ResidentialLeaseProcessor implements ProcessorInterface
     {
         $response = $this->request(sprintf('En el siguiente contrato:\n\n %s \n\nResponde sólamente SI o NO, ¿Se trata de un contrato de arrendamiento de una vivienda?', $text->content()));
 
-        $message = $this->getMessage($response);
+        $message = $this->getMessageFromResponse($response);
 
         if (str_contains($message, 'si')) {
             return 100;
@@ -58,7 +60,7 @@ readonly class ResidentialLeaseProcessor implements ProcessorInterface
         return 0;
     }
 
-    private function getMessage(array $response): string
+    private function getMessageFromResponse(array $response): string
     {
         $message = array_values($response['choices'])[0]['message']['content'];
 
@@ -74,10 +76,10 @@ readonly class ResidentialLeaseProcessor implements ProcessorInterface
 
     private function person(string $line): Person
     {
-        $line = str_replace('dni', '', $line);
+        $line = str_replace(['dni', 'd.', ':'], '', $line);
         $line = explode(',', $line);
 
-        return new Person(trim($line[0]), trim($line[1]));
+        return new Person(trim($line[0]), strtoupper(trim($line[1])));
     }
 
     private function request(string $content): array

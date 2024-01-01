@@ -13,8 +13,8 @@ use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Style\SymfonyStyle;
 
-#[AsCommand(name: 'app:reader:run', description: 'Add a short description for your command',)]
-class ReaderCommand extends Command
+#[AsCommand(name: 'app:run', description: 'Add a short description for your command',)]
+class AppCommand extends Command
 {
     public function __construct(private readonly GeneratorEngine $generatorEngine, private readonly ReaderEngine $readerEngine)
     {
@@ -36,7 +36,9 @@ class ReaderCommand extends Command
         $text = $this->generatorEngine->execute($generatorDocument);
 
         $readerText = new ReaderText($text->content());
-        $this->readerEngine->execute($readerText);
+        $agreement = $this->readerEngine->execute($readerText);
+
+        dump($agreement);
 
         return Command::SUCCESS;
     }
