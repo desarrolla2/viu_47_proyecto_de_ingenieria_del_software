@@ -27,7 +27,8 @@ class EngineTest extends TestCase
     /** @dataProvider dataProviderForTestEngine */
     public function testEngine(string $fileName, string $hash): void
     {
-        $engine = new ReaderEngine([new DummyProcessor()],);
+        $engine = new ReaderEngine();
+        $engine->addProcessors([new DummyProcessor()]);
 
         $document = new Text($fileName);
         $text = $engine->execute($document);

@@ -12,7 +12,8 @@ class DummyProcessorTest extends TestCase
 {
     public function testProcessor()
     {
-        $engine = new ReaderEngine([new DummyProcessor()],);
+        $engine = new ReaderEngine();
+        $engine->addProcessors([new DummyProcessor()]);
 
         $document = new Text();
         $text = $engine->execute($document);
