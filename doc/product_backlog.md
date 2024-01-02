@@ -74,7 +74,7 @@
 
 ## Sprint #4
 
-*Inicio 22/12/23, Final 11/01/2024*
+*Inicio 22/12/23, Final 04/01/2024*
 
 ### Issues
 
@@ -89,7 +89,7 @@
 
 ## Sprint #5
 
-*Inicio 12/01/24, Final 25/01/2024*
+*Inicio 05/01/24, Final 18/01/2024*
 
 ### Issues
 
@@ -104,7 +104,7 @@
 
 ## Sprint #6
 
-*Inicio 26/01/24, Final 06/02/2024*
+*Inicio 19/01/24, Final 01/02/2024*
 
 ### Issues
 
