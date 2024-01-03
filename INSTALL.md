@@ -26,7 +26,12 @@ git clone git@github.com:desarrolla2/viu_47_proyecto_de_ingenieria_del_software.
 cp docker/.env.dist .env
 cp docker/docker-compose.yml.dist docker-compose.yml
 cp docker/Makefile.dist Makefile
+```
 
+If you want to also mount the ELK containers for viewing logs
+
+```bash
+cp docker/docker-compose.override.yml.dist docker-compose.override.yml
 ```
 
 Then, you may overwrite configuration to meet your needs.
