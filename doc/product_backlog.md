@@ -78,15 +78,18 @@
 
 ### Issues
 
-| code | description                                                |                                                                                              |
-|------|------------------------------------------------------------|----------------------------------------------------------------------------------------------|
-| #12  | Implementación de un módulo de lectura automática de texto | [issue](https://github.com/desarrolla2/viu_47_proyecto_de_ingenieria_del_software/issues/12) |
+| code | description                                             |                                                                                              |
+|------|---------------------------------------------------------|----------------------------------------------------------------------------------------------|
+| #19  | Implementar un sistema de registros                     | [issue](https://github.com/desarrolla2/viu_47_proyecto_de_ingenieria_del_software/issues/19) |
+| #20  | Implementar un sistema de cache de peticiones HTTP      | [issue](https://github.com/desarrolla2/viu_47_proyecto_de_ingenieria_del_software/issues/20) |
+| #12  | Implementar de un módulo de lectura automática de texto | [issue](https://github.com/desarrolla2/viu_47_proyecto_de_ingenieria_del_software/issues/12) |
 
 ### References
 
 * [milestone](https://github.com/desarrolla2/viu_47_proyecto_de_ingenieria_del_software/milestone/5)
 * plan: [video](https://youtu.be/ZSU2u2kAsHQ), [notas](sprint_4/plan.md)
 * demo: [video](https://youtu.be/C5ynrUXmZBc), [notas](sprint_4/demo.md)
+* retrospectiva: [video](https://youtu.be/_ijLWTfuC8c), [notas](sprint_4/retrospective.md)
 
 ## Sprint #5
 
@@ -94,14 +97,15 @@
 
 ### Issues
 
-| code | description                                             |                                                                                             |
-|------|---------------------------------------------------------|---------------------------------------------------------------------------------------------|
-| #8   | Implementación de un proceso automático de verificación |                                                                                             |
-| #15  | Desarrollo de una interfaz de línea de comandos         |                                                                                             |
+| code | description                                     |                                                                                             |
+|------|-------------------------------------------------|---------------------------------------------------------------------------------------------|
+| #15  | Desarrollo de una interfaz de línea de comandos |                                                                                             |
+| #17  | Desarrollo de una interfaz web sencilla         |                                                                                             |
 
 ### References
 
 * [milestone](https://github.com/desarrolla2/viu_47_proyecto_de_ingenieria_del_software/milestone/6)
+* plan: [video](https://youtu.be/VbQfdDhFUTA), [notas](sprint_5/plan.md)
 
 ## Sprint #6
 
@@ -112,7 +116,7 @@
 | code | description                                                  |                                                                                             |
 |------|--------------------------------------------------------------|---------------------------------------------------------------------------------------------|
 | #13  | Elaboración de la documentación requerida para la asignatura |                                                                                             |
-| #17  | Desarrollo de una interfaz web sencilla                      |                                                                                             |
+| #8   | Implementación de un proceso automático de verificación      |                                                                                             |
 
 ### References
 
