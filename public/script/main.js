@@ -14,14 +14,16 @@ function preventDefaults(e) {
 });
 
 ['dragleave', 'drop'].forEach(eventName => {
-  dropArea.addEventListener(eventName, unhighlight, false);
+  dropArea.addEventListener(eventName, unHighlight, false);
 });
 
 function highlight(e) {
+  console.log('highlight');
   dropArea.classList.add('highlight');
 }
 
-function unhighlight(e) {
+function unHighlight(e) {
+  console.log('unHighlight');
   dropArea.classList.remove('highlight');
 }
 
