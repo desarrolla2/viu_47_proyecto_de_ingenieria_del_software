@@ -12,7 +12,7 @@ class DummyProcessorTest extends TestCase
     public function testProcessor()
     {
         $engine = new DummyProcessor();
-        $document = new Document('/var/www/tests/data/output/001.pdf');
+        $document = new Document('/var/www/tests/data/001/output/001.pdf');
         $text = $engine->execute($document);
 
         $this->assertInstanceOf(Text::class, $text);

@@ -14,12 +14,12 @@ class PdfToTextProcessorTest extends TestCase
     public function dataProviderForTestProcessor(): array
     {
         return [
-            ['/var/www/tests/data/output/001.pdf', ['CONTRATO DE ARRENDAMIENTO DE VIVIENDA']],
-            ['/var/www/tests/data/output/002.pdf', ['CONTRATO DE ARRENDAMIENTO DE VIVIENDA']],
-            ['/var/www/tests/data/output/003.pdf', ['CONTRATO DE ARRENDAMIENTO DE VIVIENDA']],
-            ['/var/www/tests/data/output/004.pdf', ['CONTRATO DE ARRENDAMIENTO DE VIVIENDA']],
-            ['/var/www/tests/data/output/005.pdf', ['CONTRATO DE ARRENDAMIENTO DE VIVIENDA']],
-            ['/var/www/tests/data/output/006.pdf', ['CONTRATO DE ARRENDAMIENTO DE VIVIENDA']],
+            ['/var/www/tests/data/001/output/001.pdf', ['CONTRATO DE ARRENDAMIENTO DE VIVIENDA']],
+            ['/var/www/tests/data/001/output/002.pdf', ['CONTRATO DE ARRENDAMIENTO DE VIVIENDA']],
+            ['/var/www/tests/data/001/output/003.pdf', ['CONTRATO DE ARRENDAMIENTO DE VIVIENDA']],
+            ['/var/www/tests/data/001/output/004.pdf', ['CONTRATO DE ARRENDAMIENTO DE VIVIENDA']],
+            ['/var/www/tests/data/001/output/005.pdf', ['CONTRATO DE ARRENDAMIENTO DE VIVIENDA']],
+            ['/var/www/tests/data/001/output/006.pdf', ['CONTRATO DE ARRENDAMIENTO DE VIVIENDA']],
         ];
     }
 

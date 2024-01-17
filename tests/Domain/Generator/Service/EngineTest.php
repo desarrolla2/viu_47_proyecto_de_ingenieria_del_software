@@ -15,7 +15,7 @@ class EngineTest extends TestCase
     public function dataProviderForTestEngine(): array
     {
         return [
-            ['/var/www/tests/data/output/001.pdf', ''],
+            ['/var/www/tests/data/001/output/001.pdf', ''],
         ];
     }
 
