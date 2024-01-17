@@ -106,6 +106,7 @@
 
 * [milestone](https://github.com/desarrolla2/viu_47_proyecto_de_ingenieria_del_software/milestone/6)
 * plan: [video](https://youtu.be/VbQfdDhFUTA), [notas](sprint_5/plan.md)
+* demo: [video](https://youtu.be/saLs0HfclGA), [notas](sprint_5/demo.md)
 
 ## Sprint #6
 

@@ -4,10 +4,10 @@
 
 ## Issues
 
-| code | description                                     |                                                                                             |
-|------|-------------------------------------------------|---------------------------------------------------------------------------------------------|
-| #15  | Desarrollo de una interfaz de línea de comandos |                                                                                             |
-| #17  | Desarrollo de una interfaz web sencilla         |                                                                                             |
+| code | description                                     |                                                                                              |
+|------|-------------------------------------------------|----------------------------------------------------------------------------------------------|
+| #15  | Desarrollo de una interfaz de línea de comandos | [issue](https://github.com/desarrolla2/viu_47_proyecto_de_ingenieria_del_software/issues/15) |
+| #17  | Desarrollo de una interfaz web sencilla         | [issue](https://github.com/desarrolla2/viu_47_proyecto_de_ingenieria_del_software/issues/17) |
 
 ### References
 

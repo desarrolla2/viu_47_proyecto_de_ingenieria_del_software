@@ -13,7 +13,7 @@
 
 * Los registros se almacenan en formato logstash, que posteriormente son parseados a través de un sistema ELK.
 
-# #20  Implementar un sistema de cache de peticiones HTTP
+## #20  Implementar un sistema de cache de peticiones HTTP
 
 * Se ha implementado un sistema de caché HTTP, para evitar lanzar continuamente las mismas peticiones y superar así los
   límite de uso.
@@ -21,5 +21,5 @@
 ## #12 Implementar de un módulo de lectura automática de texto
 
 * Hemos implementado una versión inicial de este sistema, que funciona para los modelos de ejemplo.
-    * Es necesario que ampliar el conjunto de datos de prueba antes de aprobarlo para su utilización en un entorno de
-      producción.
+* Es necesario que ampliar el conjunto de datos de prueba antes de aprobarlo para su utilización en un entorno de
+  producción.
