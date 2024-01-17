@@ -2,18 +2,16 @@
 
 namespace App\Infrastructure\Controller;
 
+use Symfony\Bridge\Twig\Attribute\Template;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\Routing\Annotation\Route;
 
 class DefaultController extends AbstractController
 {
     #[Route('/', name: '_app.default')]
-    public function index(): JsonResponse
+    #[Template('default/index.html.twig')]
+    public function index(): array
     {
-        return $this->json([
-            'message' => 'Welcome to your new controller!',
-            'path' => 'src/Controller/ConferenceController.php',
-        ]);
+        return [];
     }
 }
