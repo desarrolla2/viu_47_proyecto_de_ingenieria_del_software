@@ -97,16 +97,16 @@
 
 ### Issues
 
-| code | description                                     |                                                                                             |
-|------|-------------------------------------------------|---------------------------------------------------------------------------------------------|
-| #15  | Desarrollo de una interfaz de línea de comandos |                                                                                             |
-| #17  | Desarrollo de una interfaz web sencilla         |                                                                                             |
+| code | description                             |                                                                                              |
+|------|-----------------------------------------|----------------------------------------------------------------------------------------------|
+| #17  | Desarrollo de una interfaz web sencilla | [issue](https://github.com/desarrolla2/viu_47_proyecto_de_ingenieria_del_software/issues/17) |
 
 ### References
 
 * [milestone](https://github.com/desarrolla2/viu_47_proyecto_de_ingenieria_del_software/milestone/6)
 * plan: [video](https://youtu.be/VbQfdDhFUTA), [notas](sprint_5/plan.md)
 * demo: [video](https://youtu.be/saLs0HfclGA), [notas](sprint_5/demo.md)
+* retrospectiva: [video](https://youtu.be/H7mB74ui5iA), [notas](sprint_5/retrospective.md)
 
 ## Sprint #6
 
@@ -114,11 +114,14 @@
 
 ### Issues
 
-| code | description                                                  |                                                                                             |
-|------|--------------------------------------------------------------|---------------------------------------------------------------------------------------------|
-| #13  | Elaboración de la documentación requerida para la asignatura |                                                                                             |
-| #8   | Implementación de un proceso automático de verificación      |                                                                                             |
+| code | description                                                  |                                                                                              |
+|------|--------------------------------------------------------------|----------------------------------------------------------------------------------------------|
+| #17  | Desarrollo de una interfaz web sencilla                      | [issue](https://github.com/desarrolla2/viu_47_proyecto_de_ingenieria_del_software/issues/17) |
+|      | Corregir error en github actions                             |                                                                                              |
+| #13  | Elaboración de la documentación requerida para la asignatura |                                                                                              |
+| #8   | Implementación de un proceso automático de verificación      |                                                                                              |
 
 ### References
 
 * [milestone](https://github.com/desarrolla2/viu_47_proyecto_de_ingenieria_del_software/milestone/7)
+* plan: [video](https://youtu.be/AcML0-qcm5Q), [notas](sprint_6/plan.md)
