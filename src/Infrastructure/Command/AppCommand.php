@@ -4,6 +4,7 @@ namespace App\Infrastructure\Command;
 
 use App\Domain\Generator\Entity\Document as GeneratorDocument;
 use App\Domain\Generator\Service\GeneratorEngine;
+use App\Domain\Reader\Entity\DummyAgreement;
 use App\Domain\Reader\Service\ReaderEngine;
 use App\Domain\Reader\ValueObject\Text as ReaderText;
 use Symfony\Component\Console\Attribute\AsCommand;
@@ -38,11 +39,17 @@ class AppCommand extends Command
 
         $readerText = new ReaderText($text->content());
         $agreement = $this->readerEngine->execute($readerText);
+        if ($agreement instanceof DummyAgreement) {
+            $io->writeln('<error>error</error>: document type could not be determined');
+
+            return Command::SUCCESS;
+        }
 
         $table = new Table($output);
-        $table->setHeaders(['Name', 'Number',]);
+        $table->setHeaders(['Key', 'Value',]);
+        $table->addRow(['Document', get_class($agreement)]);
         foreach ($agreement->parties() as $person) {
-            $table->addRow([$person->name(), $person->number()]);
+            $table->addRow(['Party', sprintf('%s, %s', $person->name(), $person->number())]);
         }
 
         $table->render();

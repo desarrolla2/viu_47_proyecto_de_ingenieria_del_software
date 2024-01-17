@@ -36,27 +36,32 @@ class ReaderEngine
     private function executeProcessor(Text $document): AgreementInterface
     {
         $processor = $this->getProcessor($document);
+        if (!$processor) {
+            throw new \RuntimeException();
+        }
 
         $this->log(sprintf('Executing Processor "%s"', get_class($processor)));
 
         return $processor->execute($document);
     }
 
-    private function getProcessor(Text $document): ProcessorInterface
+    private function getProcessor(Text $document): ?ProcessorInterface
     {
-        $scores = [];
+        $processors = [];
         /** @var ProcessorInterface $processor */
         foreach ($this->processors as $processor) {
             $score = $processor->score($document);
-            $scores[] = ['score' => $score, 'processor' => $processor];
-
             $this->log(sprintf('Scored Processor "%s" with "%s"', get_class($processor), number_format($score, 0)));
+            if (!$score) {
+                continue;
+            }
+            $processors[] = ['score' => $score, 'processor' => $processor];
         }
-        usort($scores, function (array $processor1, array $processor2) {
-            return $processor2['score'] <> $processor1['score'];
+        usort($processors, function (array $processor1, array $processor2) {
+            return $processor2['score'] <=> $processor1['score'];
         });
 
-        return reset($scores)['processor'];
+        return reset($processors)['processor'];
     }
 
     private function log(string $message, array $context = []): void

@@ -27,7 +27,7 @@ readonly class ResidentialLeaseProcessor implements ProcessorInterface
             .$text->content().'[...]'.PHP_EOL.PHP_EOL.
             'Completa los datos de la siguiente tabla'.PHP_EOL.
             'PROPIETARIO: _NOMBRE_Y_APPELLIDOS_, _DNI_'.PHP_EOL.
-            'ARRENDATARIO: _NOMBRE_Y_APPELLIDOS_, _DNI:'.PHP_EOL;
+            'ARRENDATARIO: _NOMBRE_Y_APPELLIDOS_, _DNI_'.PHP_EOL;
 
         $response = $this->request($content);
         $message = $this->getMessageFromResponse($response);
@@ -52,12 +52,11 @@ readonly class ResidentialLeaseProcessor implements ProcessorInterface
         $response = $this->request(sprintf('En el siguiente contrato:\n\n %s \n\nResponde sólamente SI o NO, ¿Se trata de un contrato de arrendamiento de una vivienda?', $text->content()));
 
         $message = $this->getMessageFromResponse($response);
-
         if (str_contains($message, 'si')) {
-            return 100;
+            return 90;
         }
 
-        return 0;
+        return -1;
     }
 
     private function getMessageFromResponse(array $response): string
