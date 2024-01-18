@@ -19,3 +19,8 @@
 /docker-compose.yml
 /Makefile
 ###< docker ###
+
+###> phpunit/phpunit ###
+/phpunit.xml
+.phpunit.result.cache
+###< phpunit/phpunit ###

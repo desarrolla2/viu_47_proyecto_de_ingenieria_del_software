@@ -44,8 +44,8 @@ function uploadFile(file) {
   let reader = new FileReader();
   reader.readAsDataURL(file);
   reader.onloadend = function() {
-    let base64String = reader.result.split(',')[1]; // Elimina la cabecera de datos URL
-    let url = 'TU_ENDPOINT_API';
+    let base64String = reader.result.split(',')[1];
+    let url = '/api/upload';
     let data = JSON.stringify({
       file: base64String,
       name: file.name,
