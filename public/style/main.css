@@ -1,18 +1,19 @@
-#drop-area {
+#app-drop-area {
     border: 2px dashed #ced4da;
     background-color: #4b5258;
-    height: 200px;
+    height: 175px;
     border-radius: 20px;
     width: 100%;
     margin: 30px 0;
     padding: 20px;
     text-align: center;
+
+    &.app-hover {
+        border: 2px dashed #b0d3f6;
+        background-color: #53697c;
+    }
 }
 
-#drop-area.highlight {
-    border: 2px dashed #a2a4a7;
-    background-color: #5d6469;
-}
 
 footer a.app-creator {
     color: #eee;

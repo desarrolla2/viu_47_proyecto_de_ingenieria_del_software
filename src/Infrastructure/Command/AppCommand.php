@@ -47,7 +47,7 @@ class AppCommand extends Command
 
         $table = new Table($output);
         $table->setHeaders(['Key', 'Value',]);
-        $table->addRow(['Document', get_class($agreement)]);
+        $table->addRow(['Document', (new \ReflectionClass($agreement))->getShortName()]);
         foreach ($agreement->parties() as $person) {
             $table->addRow(['Party', sprintf('%s, %s', $person->name(), $person->number())]);
         }

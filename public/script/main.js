@@ -1,66 +1,81 @@
-let dropArea = document.getElementById('drop-area');
+$(document).ready(function() {
+  let $dropArea = $('#app-drop-area');
 
-['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
-  dropArea.addEventListener(eventName, preventDefaults, false);
-});
+  ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
+    $dropArea.on(eventName, preventDefaults);
+  });
 
-function preventDefaults(e) {
-  e.preventDefault();
-  e.stopPropagation();
-}
+  function preventDefaults(e) {
+    e.preventDefault();
+    e.stopPropagation();
+  }
 
-['dragenter', 'dragover'].forEach(eventName => {
-  dropArea.addEventListener(eventName, highlight, false);
-});
+  ['dragenter', 'dragover'].forEach(eventName => {
+    $dropArea.on(eventName, () => $dropArea.addClass('app-hover'));
+  });
 
-['dragleave', 'drop'].forEach(eventName => {
-  dropArea.addEventListener(eventName, unHighlight, false);
-});
+  ['dragleave', 'drop'].forEach(eventName => {
+    $dropArea.on(eventName, () => $dropArea.removeClass('app-hover'));
+  });
 
-function highlight(e) {
-  console.log('highlight');
-  dropArea.classList.add('highlight');
-}
+  $dropArea.on('drop', function(e) {
+    let files = e.originalEvent.dataTransfer.files;
+    handleFiles(files);
+  });
 
-function unHighlight(e) {
-  console.log('unHighlight');
-  dropArea.classList.remove('highlight');
-}
-
-dropArea.addEventListener('drop', handleDrop, false);
-
-function handleDrop(e) {
-  let dt = e.dataTransfer;
-  let files = dt.files;
-
-  handleFiles(files);
-}
-
-function handleFiles(files) {
-  ([...files]).forEach(uploadFile);
-}
-
-function uploadFile(file) {
-  let reader = new FileReader();
-  reader.readAsDataURL(file);
-  reader.onloadend = function() {
-    let base64String = reader.result.split(',')[1];
-    let url = '/api/upload';
-    let data = JSON.stringify({
-      file: base64String,
-      name: file.name,
+  function handleFiles(files) {
+    $.each(files, function(i, file) {
+      uploadFile(file);
     });
+  }
 
-    fetch(url, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: data,
-    }).then(response => response.json()).then(data => {
-      document.getElementById('response').innerHTML = JSON.stringify(data);
-    }).catch(() => {
-      document.getElementById('response').innerHTML = 'Error al subir el archivo';
-    });
-  };
-}
+  function cleanResponses() {
+    let $responses = $('.app-response');
+    let number = 3;
+    if ($responses.length > number) {
+      $responses.eq(number).fadeOut('slow', function() {
+        $(this).remove();
+      });
+    }
+  }
+
+  function uploadFile(file) {
+    let reader = new FileReader();
+    reader.readAsDataURL(file);
+    reader.onloadend = function() {
+      let $responses = $('#app-responses');
+      let base64String = reader.result.split(',')[1];
+      let data = {
+        file: base64String,
+        name: file.name,
+      };
+
+      let $loading = $('<div class=" alert alert-primary" role="alert" style="opacity: 0;">Loading...</div>');
+      $responses.prepend($loading);
+      $loading.fadeTo('slow', 1);
+
+      $.ajax({
+        url: '/api/upload',
+        type: 'POST',
+        contentType: 'application/json',
+        data: JSON.stringify(data),
+        success: function(response) {
+          $loading.remove();
+          let $response = $('<div class="app-response alert alert-success" role="alert" style="opacity: 0;">').text(JSON.stringify(response));
+          $responses.prepend($response);
+          $response.fadeTo('slow', 1);
+
+          cleanResponses();
+        },
+        error: function(response) {
+          $loading.remove();
+          let $response = $('<div class="app-response alert alert-danger" role="alert" style="opacity: 0;">').text(JSON.stringify(response.responseJSON));
+          $('#app-responses').prepend($response);
+          $response.fadeTo('slow', 1);
+
+          cleanResponses();
+        },
+      });
+    };
+  }
+});

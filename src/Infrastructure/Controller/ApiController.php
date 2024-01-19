@@ -30,12 +30,12 @@ class ApiController extends AbstractController
         $file = base64_decode($data['file']);
 
         $fileName = sprintf('%s.%s', hash('sha256', uniqid(get_called_class(), true)), pathinfo($data['name'], PATHINFO_EXTENSION));
-        $path = sprintf('%s/%s', $this->getParameter('kernel.cache_dir'), $fileName);
+        $path = sprintf('%s/%s', sys_get_temp_dir(), $fileName);
 
         try {
             file_put_contents($path, $file);
         } catch (FileException $exception) {
-            return new JsonResponse(['code' => Response::HTTP_INTERNAL_SERVER_ERROR, 'message' => $exception->getMessage()], Response::HTTP_INTERNAL_SERVER_ERROR);
+            return new JsonResponse(['code' => Response::HTTP_INTERNAL_SERVER_ERROR, 'message' => 'Document type could not be processed'], Response::HTTP_INTERNAL_SERVER_ERROR);
         }
 
         $generatorDocument = new GeneratorDocument($path);
@@ -43,6 +43,8 @@ class ApiController extends AbstractController
 
         $readerText = new ReaderText($text->content());
         $agreement = $this->readerEngine->execute($readerText);
+
+        unlink($path);
 
         if ($agreement instanceof DummyAgreement) {
             return new JsonResponse(['code' => Response::HTTP_BAD_REQUEST, 'message' => 'Document type could not be determined'], Response::HTTP_BAD_REQUEST);
@@ -54,6 +56,6 @@ class ApiController extends AbstractController
             return $carry;
         }, []);
 
-        return new JsonResponse(['code' => Response::HTTP_BAD_REQUEST, 'document' => get_class($agreement), 'parties' => $parties], Response::HTTP_BAD_REQUEST);
+        return new JsonResponse(['code' => Response::HTTP_OK, 'document' => (new \ReflectionClass($agreement))->getShortName(), 'parties' => $parties], Response::HTTP_OK);
     }
 }
