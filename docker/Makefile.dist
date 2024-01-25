@@ -31,8 +31,8 @@ serve:
 	docker-compose exec php bash -c "symfony server:start"
 
 tests:
-	docker-compose run php bash -c "vendor/bin/phpunit ."
+	docker-compose run php bash -c "vendor/bin/phpunit tests"
 
 run:
-	docker-compose run php bash -c "php bin/console app:run /var/www/tests/data/001/output/002.pdf"
+	docker-compose run php bash -c "php bin/console app:run /var/www/tests/data/001/output/001.pdf"
 
