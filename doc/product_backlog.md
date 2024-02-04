@@ -126,4 +126,7 @@
 * plan: [video](https://youtu.be/AcML0-qcm5Q), [notas](sprint_6/plan.md)
 * demo: [video](https://youtu.be/f-00CNTTzwk), [notas](sprint_6/demo.md)
 * retrospectiva: [video](https://youtu.be/Eg8BUbnQtJs), [notas](sprint_6/retrospective.md)
-  
+
+## Final report
+
+[video](https://youtu.be/z9224lEcXH4), [report](final/REPORT.md)
